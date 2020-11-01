@@ -7,7 +7,6 @@ const Header = props => {
             <Text style={styles.HeaderTitle}>{props.title}</Text>
         </View>
     );
-
 };
 
 const styles = StyleSheet.create({
