@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import { View,Text, Button,TextInput, StyleSheet, Platform, TouchableOpacity } from 'react-native';
+import { View,Text, Button,TextInput, StatusBar, StyleSheet, Platform, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Feather from 'react-native-vector-icons/Feather';
 
-const SignInScreen = (navigation) => {
+const SignInScreen = ({navigation}) => {
 
     const [data, setData] = useState({
         username: '',
@@ -45,11 +45,15 @@ const SignInScreen = (navigation) => {
      
 
     return (
-        <View style={styles.container}>
+        <View style={styles.container}> 
+        <StatusBar backgroundColor='#009387' barStyle="light-content" />
             <View style={styles.header}>
                 <Text style={styles.text_header}>Welcome</Text>
             </View>
-            <View style={styles.footer}>
+            <Animatable.View 
+            animation="fadeInUpBig"
+            style={styles.footer}
+            >
                 <Text style={styles.text_footer}>Username</Text>
                 <View style={styles.action}>
                     <FontAwesome 
@@ -126,19 +130,17 @@ const SignInScreen = (navigation) => {
             </View>
 
             <TouchableOpacity
-            onPress={(navigation) => navigation.navigate('SignUpScreen')}
+            onPress={() => navigation.navigate('SignUpScreen')}
             >
-            <Text style={[styles.textSign,{
+           <Text style={[styles.textSign,{
                     marginTop: 35,
                     marginLeft: 135,
-                    marginRight: 130,
-                    borderWidth: 1,
-                    borderColor: '#009387',
+                    marginRight: 125,
                     color: '#009387'
-                }]}>Sign Up</Text>
+                }]}>Sign Up</Text> 
             </TouchableOpacity>
 
-            </View>
+            </Animatable.View>
         </View>
     );
 };
