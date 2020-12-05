@@ -45,6 +45,10 @@ const SignInScreen = ({navigation}) => {
             secureTextEntry: !data.secureTextEntry
         });
     }
+
+    const loginHandle = (userName, password) => {
+        signIn(userName, password);
+    }
      
 
     return (
@@ -118,19 +122,24 @@ const SignInScreen = ({navigation}) => {
                     </TouchableOpacity>
                 </View>
             
+            <TouchableOpacity
+            style={styles.button}
+            onPress={() => {loginHandle(data.username, data.password)}}
+            >
+                <View style={styles.button}>
+                <Text style={[styles.textSign,{
+                    marginTop: 35,
+                    marginLeft: 135,
+                    marginRight: 125,
+                    color: '#009387'
+                }]}>Sign In</Text> 
+            </View>
+            </TouchableOpacity>
             
-            <View style={styles.button}>
-            <Button
-            title = "Sign In"
-            color= "#000000"
-            style={styles.textSign}
-            
-            onPress = {()=>{signIn()}}
-            /> 
             <Text style={[styles.text_footer,{
                     marginTop: 35
                 }]}>Dont have an account ? Create one!</Text>
-            </View>
+           
 
             <TouchableOpacity
             onPress={() => navigation.navigate('SignUpScreen')}
