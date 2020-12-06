@@ -54,7 +54,7 @@ const LocationPicker = props => {
     };
 
     return (
-    <View style={styles.LocationPicker}>
+    <View style={styles.footer}>
         <MapPreview style={styles.mapPreview} location={pickedLocation}>
         {isFetching ? (
         <ActivityIndicator size="large" color="#000000" /> 
@@ -63,8 +63,9 @@ const LocationPicker = props => {
     )}
         </MapPreview>
         <Button
-            title = "Get Car Location"
+            title = "Get User Location"
             color= "#000000"
+            style={styles.button}
             onPress = {getLocationHandler}
         />
     </View>
@@ -73,18 +74,42 @@ const LocationPicker = props => {
 
 const styles = StyleSheet.create({
     LocationPicker: {
-        marginBottom: 15
+        marginBottom: 15,
+        flex: 3,
+        backgroundColor: '#fff',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 30
     },
     mapPreview: {
-        marginBottom: 10,
+        marginBottom: 5,
+        marginTop: 5,
         width: '100',
-        height: 650,
+        height: 525,
         borderColor: '#ccc',
         borderWidth: 1,
         borderRadius: 6,
         justifyContent: 'center',
-        alignItems: 'center'
-    }
+        alignItems: 'center',
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+        paddingHorizontal: 5,
+        paddingVertical: 5
+    },
+    footer: {
+        flex: 3,
+        backgroundColor: '#fff',
+        borderTopLeftRadius: 30,
+        borderTopRightRadius: 30,
+        paddingHorizontal: 5,
+        paddingVertical: 5
+    },
+    button: {
+        alignItems: 'center',
+        marginTop: 50
+    },
 });
+
 
 export default LocationPicker;

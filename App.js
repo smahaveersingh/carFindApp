@@ -112,9 +112,8 @@ const App = () => {
 
   function HomeScreen({navigation}) {
     return (
-      <View style={styles.screen}>
+      <View style={styles.container}>
       <Header title="Find your Car"/>
-      <Button onPress={() => navigation.toggleDrawer()} title="Open Drawer" />
       <LocationPicker />
       </View>
     );
@@ -140,7 +139,11 @@ const App = () => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1
-  }
+  },
+  container: {
+    flex: 1, 
+    backgroundColor: '#009387'
+  },
 });
 
 export default App;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View,Image, StyleSheet } from 'react-native';
-
+import SearchBox from './SearchBox';
 import ENV from '../env';
 
 const MapPreview = props => {
@@ -15,6 +15,7 @@ const MapPreview = props => {
     <Image style ={styles.mapImage} source={{uri: imagePreviewURL}}/> 
     ) : ( 
     props.childeren)}
+        <SearchBox />
     </View>
     );
 };
