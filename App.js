@@ -9,6 +9,10 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { AuthContext } from './components/context';
 import { DrawerContent } from './components/DrawerContent';
 import AsyncStorage from '@react-native-community/async-storage';
+import MapScreen from './components/MapScreen';
+import MapPreview from './components/MapPreview';
+
+
 const Drawer = createDrawerNavigator();
 
 const App = () => {
@@ -114,7 +118,8 @@ const App = () => {
     return (
       <View style={styles.container}>
       <Header title="Find your Car"/>
-      <LocationPicker />
+      <LocationPicker /> 
+     
       </View>
     );
   }

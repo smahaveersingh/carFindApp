@@ -43,21 +43,11 @@ export function DrawerContent(props) {
                                 size={50}
                             />
                             <View style={{marginLeft:15, flexDirection:'column'}}>
-                                <Title style={styles.title}>John Doe</Title>
-                                <Caption style={styles.caption}>@j_doe</Caption>
+                                <Title style={styles.title}>User</Title>
+                                <Caption style={styles.caption}>@username</Caption>
                             </View>
                         </View>
 
-                        <View style={styles.row}>
-                            <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>80</Paragraph>
-                                <Caption style={styles.caption}>Following</Caption>
-                            </View>
-                            <View style={styles.section}>
-                                <Paragraph style={[styles.paragraph, styles.caption]}>100</Paragraph>
-                                <Caption style={styles.caption}>Followers</Caption>
-                            </View>
-                        </View>
                     </View>
 
                     <Drawer.Section style={styles.drawerSection}>
@@ -70,7 +60,8 @@ export function DrawerContent(props) {
                                 />
                             )}
                             label="Home"
-                            onPress={() => {props.navigation.navigate('Home')}}
+                            onPress={() => {props.navigation.navigate('MapScreen')}}
+                            
                         />
                         <DrawerItem 
                             icon={({color, size}) => (
@@ -94,28 +85,7 @@ export function DrawerContent(props) {
                             label="Bookmarks"
                             onPress={() => {props.navigation.navigate('BookmarkScreen')}}
                         />
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="settings-outline" 
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label="Settings"
-                            onPress={() => {props.navigation.navigate('SettingsScreen')}}
-                        />
-                        <DrawerItem 
-                            icon={({color, size}) => (
-                                <Icon 
-                                name="account-check-outline" 
-                                color={color}
-                                size={size}
-                                />
-                            )}
-                            label="Support"
-                            onPress={() => {props.navigation.navigate('SupportScreen')}}
-                        />
+                       
                     </Drawer.Section>
                     <Drawer.Section title="Preferences">
                         <TouchableRipple onPress={() => {toggleTheme()}}>
